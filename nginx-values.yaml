@@ -1,4 +1,3 @@
----
 controller:
   config:
     compute-full-forwarded-for: "true"
@@ -26,3 +25,10 @@ controller:
       cloud.google.com/load-balancer-type: External
   metrics:
     enabled: false
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "512Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
