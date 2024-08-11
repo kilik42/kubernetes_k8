@@ -43,6 +43,7 @@ resource "google_container_cluster" "primary" {
     master_ipv4_cidr_block  = "172.16.0.0/28"
   }
 
+
   #   Jenkins use case
   #   master_authorized_networks_config {
   #     cidr_blocks {
@@ -50,4 +51,10 @@ resource "google_container_cluster" "primary" {
   #       display_name = "private-subnet-w-jenkins"
   #     }
   #   }
+}
+resource "google_compute_disk" "grafana_disk" {
+  name  = "grafana-disk"
+  type  = "pd-standard"
+  zone  = var.zone
+  size  = "10"
 }

@@ -10,11 +10,13 @@
 variable "network_name" {
   description = "Name of the network to use"
   type        = string
+  
 }
 
 variable "subnetwork_name" {
   description = "Name of the subnetwork to use"
   type        = string
+  
 }
 
 variable "gke" {
@@ -30,10 +32,17 @@ variable "node_pool" {
   description = "Node pool configuration"
   type = object({
     name               = string
-    machine_type       = optional(string, "e2-small")
+    machine_type       = optional(string, "n2-standard-8")
     spot               = bool
     initial_node_count = optional(number, 2)
     max_count          = optional(number, 4)
     disk_size_gb       = optional(number, 10)
   })
+}
+
+
+variable "zone" {
+  description = "The zone where resources will be created"
+  type        = string
+  default     = "us-central1-a"  # Optional: Set a default zone if you want
 }
