@@ -44,5 +44,5 @@ variable "node_pool" {
 variable "zone" {
   description = "The zone where resources will be created"
   type        = string
-  default     = "us-central1-a"  # Optional: Set a default zone if you want
+  default     = "us-central1-b"  # Optional: Set a default zone if you want
 }
